@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>MgAl2O4</Authors>
+    <Version>1.8.2.0</Version>
+    <Description>Pat counter</Description>
+    <Copyright>(c) 2023 MgAl2O4</Copyright>
+    <PackageProjectUrl>https://github.com/MgAl2O4/PatMeDalamud</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Platforms>x64</Platforms>
+    <LangVersion>9.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <DalamudLibPath>E:\GitHubDesktop\Dalamud 7.3.5.0\bin\Release\</DalamudLibPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="assets\fan-kit-lala.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="assets\fan-kit-lala.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DalamudPackager" Version="2.1.10" />
+    <Reference Include="Dalamud">
+      <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ImGui.NET">
+      <HintPath>$(DalamudLibPath)ImGui.NET.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ImGuiScene">
+      <HintPath>$(DalamudLibPath)ImGuiScene.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="FFXIVClientStructs">
+      <HintPath>$(DalamudLibPath)FFXIVClientStructs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+	<Reference Include="Lumina">
+      <HintPath>$(DalamudLibPath)Lumina.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Lumina.Excel">
+      <HintPath>$(DalamudLibPath)Lumina.Excel.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PatMe.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+  <Target Name="CopyAssets" BeforeTargets="Build">
+    <Copy SourceFiles="$(ProjectDir)\assets\icon.png" DestinationFolder="$(OutDir)\images" />
+  </Target>
+
+</Project>
