@@ -12,9 +12,7 @@ namespace PatMe
                 var useDesc = counterOb.descSingular.ToUpper();
                 var useSubDesc = Service.pluginConfig.showFlyTextNames && instigator != null ? instigator.Name : " ";
 
-                // 6.3
-                //Service.flyTextGui?.AddFlyText(FlyTextKind.NamedCriticalDirectHit, 0, counterOb.Value, 0, useDesc, useSubDesc, 0xff00ff00, 0, 0);
-                Service.flyTextGui?.AddFlyText(FlyTextKind.NamedCriticalDirectHit, 0, counterOb.Value, 0, useDesc, useSubDesc, 0xff00ff00, 0);
+                Service.flyTextGui?.AddFlyText(FlyTextKind.NamedCriticalDirectHit, 0, counterOb.Value, 0, useDesc, useSubDesc, 0xff00ff00, 0, 0);
             }
 
             stopProcessing = false;

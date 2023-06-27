@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Platforms>x64</Platforms>
     <LangVersion>9.0</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -17,7 +17,7 @@
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-    <DalamudLibPath>E:\GitHubDesktop\Dalamud 7.3.5.0\bin\Release\</DalamudLibPath>
+    <DalamudLibPath>E:\GitHubDesktop\dohwacorp\Dalamud\bin\Release\</DalamudLibPath>
   </PropertyGroup>
 
   <ItemGroup>
